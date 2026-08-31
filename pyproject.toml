@@ -1,0 +1,17 @@
+# Minimaler Projekt-Steckbrief, damit `import acf_analysis` in den Notebooks
+# funktioniert. Einmalig im Projektordner ausfuehren:  pip install -e .
+# ("-e" = editable: Aenderungen am Code wirken sofort, ohne erneutes Installieren.)
+
+[build-system]                              # womit das Paket gebaut wird (Standard)
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]                                   # Steckbrief des Projekts
+name = "acf_analysis"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["numpy", "pandas", "scipy", "matplotlib"]  # Laufzeit-Abhaengigkeiten
+
+[tool.setuptools.packages.find]             # wo der Paketcode liegt: src/acf_analysis
+where = ["src"]
+include = ["acf_analysis*"]

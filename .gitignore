@@ -1,0 +1,57 @@
+# Ignore raw data and sensitive files
+data/raw/
+data/processed/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.swp
+
+# Environment files
+.env
+.env.*
+
+# Logs and build
+*.log
+dist/
+build/
+
+# Keep processed data in repo, but ignore any raw uploads
+data/raw/**
+
+# Gescrapte reale Spieldaten (sensibel, Abschnitt 11): Zielort data/scraped/
+# Inhalt ignorieren, aber den Ordner (via .gitkeep) im Repo behalten.
+data/scraped/*
+!data/scraped/.gitkeep
+# Analysefertige long_df der ECHTEN Datensaetze (Fussball, Volleyball) -- sensibel
+# nach Abschnitt 11, duerfen nicht ins Repo. Ordner via .gitkeep behalten.
+data/acf-ready/*
+!data/acf-ready/.gitkeep
+# Sicherheitsnetz: versehentliche CSV-Ausgaben im scraper-Ordner nie committen
+scraper/**/*.csv
+# Scrapy-Laufzeit-Artefakte (HTTP-Cache; Logs deckt bereits *.log ab)
+scraper/.scrapy/
+
+# Arbeitsgrundlage fuer Claude Code -- lokal behalten, nicht ins Repo
+CLAUDE.md
+.claude/
+
+# Datenaufbereitung: Zwischenausgaben zeigen die sensiblen Rohdaten -- lokal behalten.
+# Inhalt ignorieren, aber den Ordner (via .gitkeep) als Platzhalter im Repo behalten.
+notebooks/01_dataprep/*
+!notebooks/01_dataprep/.gitkeep
